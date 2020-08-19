@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+}
+
+.active {
+  color: green;
+}
+
+.author-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-div li {
+  text-align: left;
+}
