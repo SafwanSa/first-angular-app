@@ -1,0 +1,10 @@
+.author-div {
+  display: flex;
+  justify-items: center;
+  margin: 1rem auto;
+}
+
+.author-div li {
+  text-align: left;
+  margin-left: 4rem;
+}

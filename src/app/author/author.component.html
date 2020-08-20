@@ -1,0 +1,7 @@
+<div class="author-div">
+  <button (click)="author.toggle()">Toggle</button>
+  <button (click)="onDelete()">Delete</button>
+  <li [style.color]="author.isActive ? 'green' : 'red'">
+    {{author.name}}
+  </li>
+</div>

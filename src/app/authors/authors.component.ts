@@ -26,6 +26,13 @@ export class AuthorsComponent implements OnInit {
     this.authorName = "";
   }
 
+  deleteAuthor(author: Author) {
+    const index = this.authors.indexOf(author)
+    if (index !== -1) {
+      this.authors.splice(index, 1);
+    }
+  }
+
   ngOnInit(): void {
     this.authorName = "";
   }

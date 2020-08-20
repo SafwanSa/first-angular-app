@@ -2,15 +2,9 @@
 <input [(ngModel)]="authorName" (keyup.enter)="onPressed()">
 <button (click)="addAuthor()">Add Author</button>
 <ul>
-  <div *ngFor="let author of authors" class="author-div">
-    <button (click)="author.isActive = !author.isActive">Toggle</button>
-
-    <li [style.color]="author.isActive ? 'green' : 'red'">
-      {{author.name}}
-    </li>
+  <div *ngFor="let author of authors">
+    <app-author [author]="author" (deleteAuthor)="deleteAuthor(author)"></app-author>
   </div>
-
-
   <li>
     author {{ authorName.length === 0 ? "-" : authorName}}
   </li>

@@ -21,4 +21,8 @@ export class Author {
     this.name = name;
     this.isActive = isActive;
   }
+
+  toggle() {
+    this.isActive = !this.isActive
+  }
 }
