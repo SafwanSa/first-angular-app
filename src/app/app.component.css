@@ -1,0 +1,11 @@
+.root-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.root-container h1 {
+  background: lightblue;
+  padding: 1.5rem;
+}

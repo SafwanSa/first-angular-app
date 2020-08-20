@@ -9,7 +9,7 @@ import { Author } from '../authors.service';
 })
 export class AuthorsComponent implements OnInit {
   authors;
-  authorName: String;
+  authorName: string;
 
   constructor(private authorsService: AuthorsService) {
     this.authors = authorsService.getAuthors();
