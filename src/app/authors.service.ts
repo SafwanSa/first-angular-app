@@ -5,24 +5,24 @@ import { Injectable } from '@angular/core';
 })
 export class AuthorsService {
   private authors: Author[] = [
-    new Author("author1", false),
-    new Author("author2", true),
-    new Author("author3", true)
+    new Author('author1', false),
+    new Author('author2', true),
+    new Author('author3', true)
   ];
   constructor() { }
 
-  getAuthors() {
+  getAuthors(): Author[] {
     return this.authors;
   }
 }
 
 export class Author {
-  constructor(private name: String, private isActive: boolean) {
+  constructor(public name: string, public isActive: boolean) {
     this.name = name;
     this.isActive = isActive;
   }
 
-  toggle() {
-    this.isActive = !this.isActive
+  toggle(): void {
+    this.isActive = !this.isActive;
   }
 }
