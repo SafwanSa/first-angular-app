@@ -1,6 +1,8 @@
 .root-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  justify-items: center;
   padding: 1rem;
   margin: 0 auto;
 }
@@ -38,4 +40,11 @@ ul li {
 .no-authors {
   margin: 0 auto;
   padding-top: 2rem;
+}
+
+.clear-btn {
+  width: 20%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+
 }

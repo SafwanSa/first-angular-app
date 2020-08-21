@@ -32,6 +32,10 @@ export class AuthorsComponent implements OnInit {
     }
   }
 
+  clearAuthorsList() {
+    this.authors = [];
+  }
+
   ngOnInit(): void {
     this.authorName = "";
   }

@@ -1,5 +1,7 @@
 <div class="root-container">
   <h2> Authors List</h2>
+  <button class="clear-btn" (click)="clearAuthorsList()">Clear</button>
+
 
   <div class="form-container">
     <input [(ngModel)]="authorName" (keyup.enter)="onPressed()">
