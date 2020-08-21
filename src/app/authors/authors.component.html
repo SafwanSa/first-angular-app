@@ -4,7 +4,7 @@
 
 
   <div class="form-container">
-    <input [(ngModel)]="authorName" (keyup.enter)="onPressed()">
+    <input [(ngModel)]="authorName" (keyup.enter)="onPressed()" [appNameFormat]="'upperCase'">
     <button (click)="addAuthor()">Add Author</button>
   </div>
 

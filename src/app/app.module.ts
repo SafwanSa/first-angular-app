@@ -8,6 +8,7 @@ import { AuthorsService, Author } from './authors.service';
 import { FormsModule } from '@angular/forms';
 import { AuthorComponent } from './author/author.component';
 import { TestSwitchComponent } from './test-switch/test-switch.component';
+import { NameFormatDirective } from './directives/name-format.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TestSwitchComponent } from './test-switch/test-switch.component';
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
-    TestSwitchComponent
+    TestSwitchComponent,
+    NameFormatDirective
   ],
   imports: [
     BrowserModule,
