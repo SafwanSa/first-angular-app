@@ -1,0 +1,14 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  list-style: none;
+}
+
+.nav li {
+  padding: 1rem;
+}
+
+.active {
+  color:green;
+}

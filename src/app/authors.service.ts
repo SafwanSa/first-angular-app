@@ -4,11 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthorsService {
-  private authors: Author[] = [
-    new Author('author1', false),
-    new Author('author2', true),
-    new Author('author3', true)
-  ];
+  private authors: Author[] = [];
   constructor() { }
 
   getAuthors(): Author[] {

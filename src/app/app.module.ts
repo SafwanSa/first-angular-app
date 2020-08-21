@@ -7,13 +7,15 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService, Author } from './authors.service';
 import { FormsModule } from '@angular/forms';
 import { AuthorComponent } from './author/author.component';
+import { TestSwitchComponent } from './test-switch/test-switch.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorsComponent,
-    AuthorComponent
+    AuthorComponent,
+    TestSwitchComponent
   ],
   imports: [
     BrowserModule,
