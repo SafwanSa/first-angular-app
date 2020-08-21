@@ -1,12 +1,3 @@
-<ul class="nav">
-  <li [class.active]="viewMode == 'map'">
-    <a (click)="viewMode='map'">Home</a>
-  </li>
-  <li [class.active]="viewMode == 'list'">
-    <a (click)="viewMode='list'">Authors List</a>
-  </li>
-</ul>
-
 <div [ngSwitch]="viewMode">
   <div *ngSwitchCase="'map'">
     Welcome Page

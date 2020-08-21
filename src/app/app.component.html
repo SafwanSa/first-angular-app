@@ -1,7 +1,17 @@
 <div class="root-container">
   <div class="header">
     <h1>Angular</h1>
-    <app-test-switch></app-test-switch>
+
+    <ul class="nav">
+      <li [class.active]="viewMode == 'map'">
+        <a (click)="viewMode='map'">Home</a>
+      </li>
+      <li [class.active]="viewMode == 'list'">
+        <a (click)="viewMode='list'">Authors List</a>
+      </li>
+    </ul>
   </div>
+
+  <app-test-switch [viewMode]="viewMode"></app-test-switch>
 </div>
 <router-outlet></router-outlet>

@@ -5,7 +5,32 @@
   font-family: sans-serif;
 }
 
-.header h1 {
+.header {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
   background: lightblue;
+}
+
+.header h1{
   padding: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  list-style: none;
+}
+
+.nav li {
+  padding: 1rem;
+}
+
+.nav li a:hover {
+  cursor: pointer;
+}
+
+.active {
+  color:green;
 }

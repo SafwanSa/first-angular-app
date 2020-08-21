@@ -1,20 +1,3 @@
-.nav {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  list-style: none;
-}
 
-.nav li {
-  padding: 1rem;
-}
-
-.nav li a:hover {
-  cursor: pointer;
-}
-
-.active {
-  color:green;
-}
 
 
