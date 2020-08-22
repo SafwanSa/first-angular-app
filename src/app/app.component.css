@@ -12,7 +12,7 @@
   background: lightblue;
 }
 
-.header h1{
+.header h1 {
   padding: 1.5rem;
 }
 
@@ -32,5 +32,5 @@
 }
 
 .active {
-  color:green;
+  color: white;
 }

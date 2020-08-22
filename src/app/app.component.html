@@ -4,14 +4,14 @@
 
     <ul class="nav">
       <li [class.active]="viewMode == 'map'">
-        <a (click)="viewMode='map'">Home</a>
+        <a (click)="viewMode = 'map'">Home</a>
       </li>
       <li [class.active]="viewMode == 'list'">
-        <a (click)="viewMode='list'">Authors List</a>
+        <a (click)="viewMode = 'list'">Authors List</a>
       </li>
 
-      <li>
-        <a (click)="viewMode='contact'">Contact us</a>
+      <li [class.active]="viewMode == 'contact'">
+        <a (click)="viewMode = 'contact'">Contact us</a>
       </li>
     </ul>
   </div>
