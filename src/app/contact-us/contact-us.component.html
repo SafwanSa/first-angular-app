@@ -1,28 +1,31 @@
-<form>
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input
-      required
-      minlength="4"
-      maxlength="10"
-      ngModel
-      name="firstName"
-      #firstName="ngModel"
-      type="text"
-      id="firstName"
-      class="form-control"
-      (change)="log(firstName)"
-    />
-    <div
-      class="alert alert-danger"
-      *ngIf="!firstName.valid && firstName.touched"
-    >
-      <div *ngIf="firstName.errors.required">
-        First name is required.
-      </div>
-      <div *ngIf="firstName.errors.minlength">
-        First name should be min {{ firstName.errors.minlength.requiredLength }}
-        characters.
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        required
+        minlength="4"
+        maxlength="10"
+        ngModel
+        name="firstName"
+        #firstName="ngModel"
+        type="text"
+        id="firstName"
+        class="form-control"
+        (change)="log(firstName)"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="!firstName.valid && firstName.touched"
+      >
+        <div *ngIf="firstName.errors.required">
+          First name is required.
+        </div>
+        <div *ngIf="firstName.errors.minlength">
+          First name should be min
+          {{ firstName.errors.minlength.requiredLength }}
+          characters.
+        </div>
       </div>
     </div>
   </div>
