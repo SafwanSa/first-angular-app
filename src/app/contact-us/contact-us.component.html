@@ -53,11 +53,27 @@
   <div class="checkbox">
     <label>Check me</label>
     <input type="checkbox" ngModel name="isChecked" />
-    <p>
-      {{ f.value | json }}
-    </p>
   </div>
 
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select
+      multiple
+      ngModel
+      name="contactMethod"
+      id="contactMethod"
+      class="form-control"
+    >
+      <option></option>
+      <option *ngFor="let method of contactMethod" [ngValue]="method">
+        {{ method.name }}
+      </option>
+    </select>
+  </div>
+
+  <p>
+    {{ f.value | json }}
+  </p>
   <button
     class="btn btn-primary"
     [disabled]="firstName.invalid || comment.invalid"
