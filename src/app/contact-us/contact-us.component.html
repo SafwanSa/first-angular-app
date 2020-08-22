@@ -12,16 +12,16 @@
       id="firstName"
       class="form-control"
       (change)="log(firstName)"
-    >
+    />
     <div
       class="alert alert-danger"
-      *ngIf="!firstName.valid && firstName.touched "
+      *ngIf="!firstName.valid && firstName.touched"
     >
       <div *ngIf="firstName.errors.required">
         First name is required.
       </div>
       <div *ngIf="firstName.errors.minlength">
-        First name should be min {{firstName.errors.minlength.requiredLength}}
+        First name should be min {{ firstName.errors.minlength.requiredLength }}
         characters.
       </div>
     </div>
