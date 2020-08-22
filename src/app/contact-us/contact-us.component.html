@@ -34,12 +34,25 @@
     <label for="comment">Comment</label>
     <textarea
       ngModel
+      required
       name="comment"
       id="comment"
+      #comment="ngModel"
       cols="30"
       rows="10"
       class="form-control"
     ></textarea>
+
+    <div *ngIf="comment.invalid && comment.touched">
+      <div class="alert alert-danger" *ngIf="comment.errors.required">
+        The comment is required.
+      </div>
+    </div>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <button
+    class="btn btn-primary"
+    [disabled]="firstName.invalid || comment.invalid"
+  >
+    Submit
+  </button>
 </form>
