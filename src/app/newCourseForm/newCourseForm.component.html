@@ -1,4 +1,11 @@
-<form>
+<form [formGroup]="form">
+  <!-- <input formControlName="name" />
+
+  <div formGroupName="contact">
+    <input formControlName="email" type="text" />
+    <input formControlName="phone" type="text" />
+  </div> -->
+
   <input
     #topic
     (keyup.enter)="addTopic(topic)"
