@@ -10,25 +10,22 @@ import { AuthorComponent } from './author/author.component';
 import { TestSwitchComponent } from './test-switch/test-switch.component';
 import { NameFormatDirective } from './directives/name-format.directive';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
     TestSwitchComponent,
     NameFormatDirective,
-      ContactUsComponent
-   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    ContactUsComponent,
+    SignupFormComponent,
   ],
-  providers: [
-    AuthorsService
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  providers: [AuthorsService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

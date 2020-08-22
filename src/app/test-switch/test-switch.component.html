@@ -11,5 +11,9 @@
     <contact-us></contact-us>
   </div>
 
+  <div *ngSwitchCase="'signup'">
+    <app-signup-form></app-signup-form>
+  </div>
+
   <div *ngSwitchDefault>Otherwise</div>
 </div>
