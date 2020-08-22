@@ -9,16 +9,18 @@ import { FormsModule } from '@angular/forms';
 import { AuthorComponent } from './author/author.component';
 import { TestSwitchComponent } from './test-switch/test-switch.component';
 import { NameFormatDirective } from './directives/name-format.directive';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
     TestSwitchComponent,
-    NameFormatDirective
-  ],
+    NameFormatDirective,
+      ContactUsComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
