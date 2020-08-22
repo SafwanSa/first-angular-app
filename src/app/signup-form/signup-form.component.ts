@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsernameValidators } from './usernameValidators';
+import { AuthorsService } from '../authors.service';
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
@@ -28,6 +29,12 @@ export class SignupFormComponent implements OnInit {
 
   get password() {
     return this.form.get('password');
+  }
+
+  login() {
+    this.form.setErrors({
+      invalidLogin: true,
+    });
   }
 
   ngOnInit() {}
