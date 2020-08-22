@@ -13,6 +13,10 @@
     >
       <div *ngIf="username.errors.required">Username is required.</div>
 
+      <div *ngIf="username.errors.shouldBeUnique">
+        Username is already taken.
+      </div>
+
       <div *ngIf="username.errors.cannotContainSpace">
         Username cannot contain spaces.
       </div>
