@@ -12,4 +12,8 @@ export class ContactUsComponent implements OnInit {
   ngOnInit() {
   }
 
+  log(x) {
+    console.log(x);
+  }
+
 }

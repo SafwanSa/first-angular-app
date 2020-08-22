@@ -1,18 +1,31 @@
 <div class="root-container">
   <h2> Authors List</h2>
-  <button class="clear-btn" (click)="clearAuthorsList()">Clear</button>
+  <button
+    class="clear-btn"
+    (click)="clearAuthorsList()"
+  >Clear</button>
 
 
   <div class="form-container">
-    <input [(ngModel)]="authorName" (keyup.enter)="onPressed()" [appNameFormat]="'upperCase'">
+    <input
+      [(ngModel)]="authorName"
+      (keyup.enter)="onPressed()"
+      [appNameFormat]="'upperCase'"
+    >
     <button (click)="addAuthor()">Add Author</button>
   </div>
 
   <div *ngIf="authors.length > 0; then authorsList else noAuthors"></div>
   <ng-template #authorsList>
     <ul>
-      <div class="authors-container" *ngFor="let author of authors; index as i">
-        <app-author [author]="author" (deleteAuthor)="deleteAuthor(i)"></app-author>
+      <div
+        class="authors-container"
+        *ngFor="let author of authors; index as i"
+      >
+        <app-author
+          [author]="author"
+          (deleteAuthor)="deleteAuthor(i)"
+        ></app-author>
       </div>
       <li>
         author {{ authorName.length === 0 ? "-" : authorName}}
