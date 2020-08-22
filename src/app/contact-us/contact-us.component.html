@@ -71,6 +71,19 @@
     </select>
   </div>
 
+  <div *ngFor="let method of contactMethod" class="radio">
+    <label for="">
+      <input
+        class=""
+        type="radio"
+        ngModel
+        name="contactMethod"
+        [value]="method.id"
+      />
+      {{ method.name }}
+    </label>
+  </div>
+
   <p>
     {{ f.value | json }}
   </p>
