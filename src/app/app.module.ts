@@ -13,9 +13,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewCourseFormComponent } from './newCourseForm/newCourseForm.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NameFormatDirective,
     ContactUsComponent,
     SignupFormComponent,
-  ],
+      NewCourseFormComponent
+   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [AuthorsService],
   bootstrap: [AppComponent],

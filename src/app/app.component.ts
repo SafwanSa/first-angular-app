@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  viewMode = 'signup';
+  viewMode = 'newCourse';
   title = 'first-angular-app';
 }

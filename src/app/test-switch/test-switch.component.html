@@ -15,5 +15,9 @@
     <app-signup-form></app-signup-form>
   </div>
 
+  <div *ngSwitchCase="'newCourse'">
+    <app-newCourseForm></app-newCourseForm>
+  </div>
+
   <div *ngSwitchDefault>Otherwise</div>
 </div>
