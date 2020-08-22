@@ -1,5 +1,5 @@
 <form #f="ngForm" (ngSubmit)="submit(f)">
-  <div ngModelGroup="contact">
+  <div>
     <div class="form-group">
       <label for="firstName">First Name</label>
       <input
@@ -43,12 +43,21 @@
       class="form-control"
     ></textarea>
 
-    <div *ngIf="comment.invalid && comment.touched">
-      <div class="alert alert-danger" *ngIf="comment.errors.required">
+    <div class="alert alert-danger" *ngIf="comment.invalid && comment.touched">
+      <div *ngIf="comment.errors.required">
         The comment is required.
       </div>
     </div>
   </div>
+
+  <div class="checkbox">
+    <label>Check me</label>
+    <input type="checkbox" ngModel name="isChecked" />
+    <p>
+      {{ f.value | json }}
+    </p>
+  </div>
+
   <button
     class="btn btn-primary"
     [disabled]="firstName.invalid || comment.invalid"
