@@ -21,10 +21,10 @@ export class PostsComponent implements OnInit {
       title: input.value,
     };
     this.postService.create(post).subscribe(
-      (response) => {
+      (newPost) => {
         this.posts.splice(0, 0, post);
         input.value = '';
-        console.log(response);
+        console.log(newPost);
       },
       (error: AppError) => {
         if (error instanceof BadInputError) {
@@ -37,18 +37,16 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post) {
-    this.postService.update(post).subscribe((response) => {
-      console.log(response);
+    this.postService.update(post).subscribe((updatedPost) => {
+      console.log(updatedPost);
     });
   }
 
   deletePost(post) {
     this.postService.delete(post.id).subscribe(
-      (response) => {
-        if (Object.keys(response).length !== 0) {
-          let index = this.posts.indexOf(post);
-          this.posts.splice(index, 1);
-        }
+      () => {
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
       },
       (error: AppError) => {
         if (error instanceof NotFoundError) {
@@ -61,9 +59,6 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.postService.getAll().subscribe((response) => {
-      this.posts = response as any;
-      console.log(response);
-    });
+    this.postService.getAll().subscribe((posts) => (this.posts = posts as any));
   }
 }
