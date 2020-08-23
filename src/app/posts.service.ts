@@ -25,6 +25,8 @@ export class PostsService {
   }
 
   deletePost(id) {
+    console.log(id);
+
     return this.http.delete(this.url + '/' + id);
   }
 }

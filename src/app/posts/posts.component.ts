@@ -23,8 +23,13 @@ export class PostsComponent implements OnInit {
         input.value = '';
         console.log(response);
       },
-      (error) => {
-        alert('Unexpected error occured. ');
+      (error: Response) => {
+        if (error.status === 400) {
+          // this.form.setErrors(error: error.json());
+        } else {
+          alert('Unexpected error occured. ');
+        }
+        console.log(error);
       }
     );
   }
@@ -43,11 +48,17 @@ export class PostsComponent implements OnInit {
   deletePost(post) {
     this.postService.deletePost(post.id).subscribe(
       (response) => {
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
+        if (Object.keys(response).length !== 0) {
+          let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1);
+        }
       },
-      (error) => {
-        alert('Unexpected error occured. ');
+      (error: Response) => {
+        if (error.status === 404) {
+          alert('This post has already been deleted.');
+        } else {
+          alert('Uncexpected error occured. ');
+        }
         console.log(error);
       }
     );
@@ -57,7 +68,7 @@ export class PostsComponent implements OnInit {
     this.postService.getPosts().subscribe(
       (response) => {
         this.posts = response as any;
-        console.log(response);
+        // console.log(response);
       },
       (error) => {
         alert('Uncexpected error occured. ');
