@@ -17,9 +17,9 @@ import { NewCourseFormComponent } from './newCourseForm/newCourseForm.component'
 
 import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
-
+import { PostsService } from './posts.service';
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
@@ -28,8 +28,8 @@ import { PostsComponent } from './posts/posts.component';
     ContactUsComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-      PostsComponent
-   ],
+    PostsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +37,7 @@ import { PostsComponent } from './posts/posts.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AuthorsService],
+  providers: [AuthorsService, PostsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
