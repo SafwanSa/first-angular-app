@@ -14,12 +14,8 @@
   />
 
   <ul class="list-group">
-    <li
-      class="list-group-item"
-      *ngFor="let topic of topics.controls"
-      (click)="deleteTopic(topic)"
-    >
-      {{ topic.value }}
+    <li class="list-group-item" *ngFor="let topic of topics.controls">
+      <a [routerLink]="['/courses', topic.value]"> {{ topic.value }}</a>
     </li>
   </ul>
 </form>

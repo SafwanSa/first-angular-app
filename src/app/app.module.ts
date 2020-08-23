@@ -21,8 +21,9 @@ import { PostsService } from './posts.service';
 import { AppErrorHandler } from './app-error-handler';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CourseComponent } from './course/course.component';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     AuthorsComponent,
     AuthorComponent,
@@ -34,7 +35,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PostsComponent,
     NavbarComponent,
     NotFoundComponent,
-  ],
+      CourseComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
