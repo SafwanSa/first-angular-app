@@ -17,30 +17,52 @@ export class PostsComponent implements OnInit {
       id: this.posts.length + 1,
       title: input.value,
     };
-    this.postService.createPost(post).subscribe((response) => {
-      this.posts.splice(0, 0, post);
-      input.value = '';
-      console.log(response);
-    });
+    this.postService.createPost(post).subscribe(
+      (response) => {
+        this.posts.splice(0, 0, post);
+        input.value = '';
+        console.log(response);
+      },
+      (error) => {
+        alert('Unexpected error occured. ');
+      }
+    );
   }
 
   updatePost(post) {
-    this.postService.updatePosts(post).subscribe((response) => {
-      console.log(response);
-    });
+    this.postService.updatePosts(post).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        alert('Unexpected error occured. ');
+      }
+    );
   }
 
   deletePost(post) {
-    this.postService.deletePost(post.id).subscribe((response) => {
-      let index = this.posts.indexOf(post);
-      this.posts.splice(index, 1);
-    });
+    this.postService.deletePost(post.id).subscribe(
+      (response) => {
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+      },
+      (error) => {
+        alert('Unexpected error occured. ');
+        console.log(error);
+      }
+    );
   }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe((response) => {
-      this.posts = response as any;
-      console.log(response);
-    });
+    this.postService.getPosts().subscribe(
+      (response) => {
+        this.posts = response as any;
+        console.log(response);
+      },
+      (error) => {
+        alert('Uncexpected error occured. ');
+        console.log(error);
+      }
+    );
   }
 }
