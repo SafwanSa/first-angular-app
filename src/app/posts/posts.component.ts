@@ -30,22 +30,16 @@ export class PostsComponent implements OnInit {
         if (error instanceof BadInputError) {
           // this.form.setErrors(error: error.originalError);
         } else {
-          alert('Unexpected error occured. ');
+          throw error;
         }
-        console.log(error);
       }
     );
   }
 
   updatePost(post) {
-    this.postService.updatePosts(post).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        alert('Unexpected error occured. ');
-      }
-    );
+    this.postService.updatePosts(post).subscribe((response) => {
+      console.log(response);
+    });
   }
 
   deletePost(post) {
@@ -60,23 +54,16 @@ export class PostsComponent implements OnInit {
         if (error instanceof NotFoundError) {
           alert('This post has already been deleted.');
         } else {
-          alert('Uncexpected error occured. ');
+          throw error;
         }
-        console.log(error);
       }
     );
   }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe(
-      (response) => {
-        this.posts = response as any;
-        // console.log(response);
-      },
-      (error) => {
-        alert('Uncexpected error occured. ');
-        console.log(error);
-      }
-    );
+    this.postService.getPosts().subscribe((response) => {
+      this.posts = response as any;
+      console.log(response);
+    });
   }
 }

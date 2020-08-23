@@ -10,7 +10,7 @@ import { BadInputError } from './bad-input-error';
   providedIn: 'root',
 })
 export class PostsService {
-  private url = 'http://jsonplaceholder.typicode.com/posts';
+  private url = 'http://localhost:1999/api/todos';
 
   constructor(private http: HttpClient) {}
 
@@ -19,12 +19,12 @@ export class PostsService {
   }
 
   createPost(post) {
-    return this.http.post(this.url, JSON.stringify(post)).pipe(
+    return this.http.post(this.url, post).pipe(
       catchError((error: Response) => {
         if (error.status === 400) {
-          return throwError(new BadInputError(error.json()));
+          return throwError(new BadInputError(error));
         }
-        return throwError(new AppError(error.json()));
+        return throwError(new AppError(error));
       })
     );
   }
