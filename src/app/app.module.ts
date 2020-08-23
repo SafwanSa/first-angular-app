@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
@@ -19,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
 import { AppErrorHandler } from './app-error-handler';
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,8 @@ import { AppErrorHandler } from './app-error-handler';
     SignupFormComponent,
     NewCourseFormComponent,
     PostsComponent,
+    NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
