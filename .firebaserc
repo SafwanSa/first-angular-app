@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "web-test-55057": {
+      "hosting": {
+        "first-angular-app": [
+          "web-test-55057"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "web-test-55057"
+  }
+}
